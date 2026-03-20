@@ -1,7 +1,8 @@
 // server.js (Backend only)
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const app = express();
 const port = 5000;
 
@@ -13,14 +14,20 @@ app.use(express.json());
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Devam@1234',
-  database: 'movie_booking',
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'movie_booking',
 });
 
 db.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    console.error('MySQL connection failed:', err.message);
+    if (err.code === 'ER_ACCESS_DENIED_ERROR') {
+      console.error('Check DB_USER / DB_PASSWORD in movie_backend/.env');
+    }
+    process.exit(1);
+  }
   console.log('Connected to MySQL');
 });
 
