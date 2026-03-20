@@ -1,0 +1,48 @@
+/* .about-page {
+  padding: 40px;
+  background: url('/images/about-bg.jpg') no-repeat center center/cover;
+  color: white;
+  min-height: 100vh;
+  backdrop-filter: blur(3px);
+}
+
+.about-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+} */
+
+
+/* src/pages/AboutUs.css */
+.about-container {
+  background-image: 'url("/images/about-bg.avif")';
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
+  color: rgb(226, 156, 156);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}

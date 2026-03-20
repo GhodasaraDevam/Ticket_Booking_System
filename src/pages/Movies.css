@@ -1,0 +1,572 @@
+/* src/pages/Movies.css */
+
+.movies-page {
+  position: relative;
+  background-image: "url('/images/bg-movies.avif')";
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  min-height: 100vh;
+  color: white;
+}
+
+.movies-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* darkens red background */
+  z-index: 0;
+}
+
+.movies-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.movie-card {
+  background: rgba(0, 0, 0, 0.85); /* darker semi-transparent black */
+  color: #bbb; /* dimmer text */
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.85);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 300px;
+  margin: 1rem;
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.movie-card h3 {
+  color: #000000; /* soft white title */
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.movie-card .genre {
+  color: #000000;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-card .description {
+  color: #000000;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  height: 60px;
+  overflow: hidden;
+}
+
+.movie-card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.movie-button {
+  background-color: #d32f2f;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.movie-button:hover {
+  background-color: #a30000;
+}
+
+/* Booking Modal Styles */
+.booking-modal {
+  max-width: 600px;
+  width: 100%;
+  background-color: #1c1c1c;
+  padding: 16px 20px;
+  border-radius: 10px;
+  color: white;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow: hidden; /* Prevent scroll */
+}
+
+.booking-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduce spacing between fields */
+  padding: 20px;
+}
+
+.booking-modal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.booking-modal form input,
+.booking-modal form select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-modal label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.booking-modal .seat-grid {
+  margin-top: 10px;
+  gap: 6px; /* Reduce spacing between seats */
+}
+
+.booking-modal .seat {
+  padding: 12px 0;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.booking-modal .seat.selected {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.booking-modal .seat-grid {
+  margin-top: 10px;
+  gap: 6px; /* Reduce spacing between seats */
+}
+
+.booking-modal button {
+  width: 100%;
+  background-color: #28a745;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-modal button:hover {
+  background-color: #218838;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.booking-form-container input,
+.booking-form-container select {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2c2c2c;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.booking-form-container input::placeholder {
+  color: #aaa;
+}
+
+@media (max-height: 700px) {
+  .booking-modal form {
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .booking-modal .seat-grid {
+    gap: 4px;
+  }
+}
+
+
+/* To make seat selector uniform */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.seat {
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+
+.book-btn,
+.trailer-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.book-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.book-btn:hover {
+  background-color: #45a049;
+}
+
+.trailer-btn {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.trailer-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Trailer Modal Styling */
+.trailer-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.trailer-content {
+  position: relative;
+  background: #000;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #fff;
+  color: #fff;
+}
+
+.trailer-content iframe {
+  width: 100%;
+  height: 540px;
+  border: none;
+  display: block;
+}
+
+.trailer-content h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  margin: 0;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: red;
+  transform: scale(1.3);
+}
+
+/* Share Button */
+.share-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 26px;
+  color: #00ffff;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.share-btn:hover {
+  transform: scale(1.2);
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trailer-content iframe {
+    height: 300px;
+  }
+
+  .trailer-content h2 {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background-color: #1c1c1c;
+  color: white;
+  border-radius: 12px;
+  padding: 20px 30px;
+  max-width: 600px;
+  width: 90vw;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-box h4 {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 22px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.modal-box input,
+.modal-box select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  font-size: 0.9rem;
+}
+
+.modal-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-box h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.modal-box input,
+.modal-box select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+}
+
+.modal-box button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  border: none;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-box button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Seat layout */
+.seat-layout {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 0.2rem;
+}
+
+.seat {
+  background-color: #ccc;
+  color: #111;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.seat:hover:not(.booked) {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+.seat.booked {
+  background-color: #555 !important;
+  color: #ddd;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+  .modal-box {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+.movie-search {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.9rem 1.2rem 0.9rem 2.8rem;
+  width: 85%;
+  max-width: 420px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+  text-align: left;
+  outline: none;
+  background-image: url('data:image/svg+xml,%3Csvg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.47 6.47 4 9.5 4S15 6.47 15 9.5 12.53 15 9.5 15 4 12.53 4 9.5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px 18px;
+  transition: box-shadow 0.3s ease;
+  color: #222;
+}
+
+.movie-search:focus {
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.7); /* golden glow */
+}

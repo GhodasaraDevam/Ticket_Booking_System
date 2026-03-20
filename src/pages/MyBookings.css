@@ -1,0 +1,132 @@
+.my-bookings-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #111111; /* Slightly lighter than black */
+  font-family: 'Segoe UI', sans-serif;
+  color: #f5f5f5;
+}
+
+.my-bookings-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.no-bookings {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aaaaaa;
+  margin-top: 100px;
+}
+
+.bookings-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.booking-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  padding: 25px 30px;
+  width: 320px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
+}
+
+.booking-card h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.booking-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #dddddd;
+}
+
+.booking-card strong {
+  color: #ffffff;
+}
+
+.booking-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.booking-card button:hover {
+  background: #ff4d4d;
+  transform: scale(1.05);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-box {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: auto;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.modal-box label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #dddddd;
+}
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+}
+
+.modal-box input:focus,
+.modal-box select:focus {
+  border-color: #e63946;
+  outline: none;
+}

@@ -1,0 +1,151 @@
+/* Login.css */
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #1c1c1c;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #2b2b2b;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.toggle {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.toggle:hover {
+  text-decoration: underline;
+}
+
+
+
+/* .login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f5f5f5;
+}
+
+.login-form {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.login-form button {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: #d4080f;
+}
+
+.toggle-line {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.toggle-line span {
+  color: #e50914;
+  cursor: pointer;
+  font-weight: bold;
+} */
+
+
+
+/* .login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(3px);
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff3d3d;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #e63333;
+} */

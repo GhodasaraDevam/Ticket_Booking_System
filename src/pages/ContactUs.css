@@ -1,0 +1,9 @@
+.contact-container {
+  background-image: 'url("/images/contact-bg.avif")';
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+}

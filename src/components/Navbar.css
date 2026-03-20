@@ -1,0 +1,217 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  padding: 15px 40px;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #e50914;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #ff2f3a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background-color: #e50914;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.login-btn:hover {
+  background-color: #ff2f3a;
+}
+
+/* Profile dropdown */
+.profile-container {
+  position: relative;
+  font-size: 16px;
+}
+
+.profile-btn {
+  font-weight: bold;
+  cursor: pointer;
+  color: #e50914;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 36px;
+  background: white;
+  color: #121212;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  min-width: 180px;
+  z-index: 99;
+}
+
+.profile-dropdown p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  padding: 6px;
+  margin-top: 8px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-right {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+
+  .nav-button {
+    margin: 8px 0;
+  }
+}
+
+
+
+
+/* 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  padding: 15px 40px;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-button:hover {
+  color: #ff0000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e50914;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar-right .login-btn {
+  background-color: #e50914;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.navbar-right .login-btn:hover {
+  background-color: #ff2f3a;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-right {
+    align-self: flex-end;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+} */

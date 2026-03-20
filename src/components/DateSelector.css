@@ -1,0 +1,12 @@
+/* DateSelector.css */
+.date-selector {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.date-selector label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
