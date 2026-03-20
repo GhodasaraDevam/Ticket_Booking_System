@@ -1,5 +1,111 @@
 # Ticket_Booking_System
 
+## Project Overview
+
+This is a full-stack movie ticket booking system:
+
+- Frontend: React (runs on port 3000)
+- Backend: Node.js + Express (runs on port 5000)
+- Database: MySQL (`movie_booking`)
+
+## Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+- MySQL Server (running locally)
+
+## Step-by-step: How to run the project
+
+### 1) Clone repository
+
+```bash
+git clone https://github.com/GhodasaraDevam/Ticket_Booking_System.git
+cd Ticket_Booking_System
+```
+
+### 2) Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3) Install backend dependencies
+
+```bash
+cd movie_backend
+npm install
+cd ..
+```
+
+### 4) Create MySQL database and tables
+
+Run this SQL in MySQL:
+
+```sql
+CREATE DATABASE IF NOT EXISTS movie_booking;
+USE movie_booking;
+
+CREATE TABLE IF NOT EXISTS users (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	email VARCHAR(150) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL,
+	role VARCHAR(20) DEFAULT 'user'
+);
+
+CREATE TABLE IF NOT EXISTS bookings (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	movie VARCHAR(255) NOT NULL,
+	date VARCHAR(50) NOT NULL,
+	time VARCHAR(50) NOT NULL,
+	seat VARCHAR(255) NOT NULL,
+	username VARCHAR(100) NOT NULL,
+	email VARCHAR(150) NOT NULL
+);
+```
+
+### 5) Configure DB credentials
+
+Update MySQL credentials in backend files:
+
+- `movie_backend/server.js`
+- `movie_backend/db.js`
+
+Set these values according to your local MySQL setup:
+
+- `host`
+- `user`
+- `password`
+- `database`
+
+### 6) Start backend server
+
+```bash
+cd movie_backend
+npm start
+```
+
+Backend URL: http://localhost:5000
+
+### 7) Start frontend app (new terminal)
+
+```bash
+cd Ticket_Booking_System
+npm start
+```
+
+Frontend URL: http://localhost:3000
+
+## Default Admin Rule
+
+- Any signup with email `admin@movietickets.com` gets admin role.
+
+## Troubleshooting
+
+- If port 3000/5000 is busy, stop the process using that port and restart.
+- If login/signup fails, verify MySQL is running and tables exist.
+- If API calls fail, make sure backend is running before starting frontend.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
