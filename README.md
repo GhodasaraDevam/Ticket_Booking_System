@@ -14,7 +14,19 @@ This is a full-stack movie ticket booking system:
 - npm
 - MySQL Server (running locally)
 
-## Step-by-step: How to run the project
+## Frontend location (website code)
+
+Your frontend website files are in:
+
+- `src/`
+- `public/`
+
+Main frontend entry files:
+
+- `src/index.js`
+- `src/App.js`
+
+## Step-by-step: first-time setup
 
 ### 1) Clone repository
 
@@ -23,7 +35,7 @@ git clone https://github.com/GhodasaraDevam/Ticket_Booking_System.git
 cd Ticket_Booking_System
 ```
 
-### 2) Install frontend dependencies
+### 2) Install frontend dependencies (root)
 
 ```bash
 npm install
@@ -64,21 +76,27 @@ CREATE TABLE IF NOT EXISTS bookings (
 );
 ```
 
-### 5) Configure DB credentials
+### 5) Configure backend environment
 
-Update MySQL credentials in backend files:
+Create your backend env file from example:
 
-- `movie_backend/server.js`
-- `movie_backend/db.js`
+```bash
+cd movie_backend
+cp .env.example .env
+```
 
-Set these values according to your local MySQL setup:
+Edit `movie_backend/.env` and set correct values:
 
-- `host`
-- `user`
-- `password`
-- `database`
+```dotenv
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_real_mysql_password
+DB_NAME=movie_booking
+```
 
-### 6) Start backend server
+## Every time you want to run the project
+
+### Terminal 1: Start backend
 
 ```bash
 cd movie_backend
@@ -87,10 +105,10 @@ npm start
 
 Backend URL: http://localhost:5000
 
-### 7) Start frontend app (new terminal)
+### Terminal 2: Start frontend
 
 ```bash
-cd Ticket_Booking_System
+cd ..
 npm start
 ```
 
@@ -105,6 +123,54 @@ Frontend URL: http://localhost:3000
 - If port 3000/5000 is busy, stop the process using that port and restart.
 - If login/signup fails, verify MySQL is running and tables exist.
 - If API calls fail, make sure backend is running before starting frontend.
+
+### macOS: MySQL access denied (`ER_ACCESS_DENIED_ERROR`)
+
+If you see access denied errors, your system may be using a different MySQL binary than Homebrew.
+
+1. Check current MySQL binary:
+
+```bash
+which mysql
+```
+
+2. Put Homebrew MySQL first in PATH:
+
+```bash
+echo 'export PATH="/opt/homebrew/opt/mysql/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+which mysql
+```
+
+3. Reset MySQL root password:
+
+```bash
+brew services stop mysql
+mysqld_safe --skip-grant-tables --skip-networking --datadir=/opt/homebrew/var/mysql &
+mysql -u root
+```
+
+Then in MySQL shell:
+
+```sql
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Devam@1234';
+```
+
+Exit and restart MySQL:
+
+```bash
+brew services start mysql
+```
+
+4. Ensure backend env file is set in `movie_backend/.env`:
+
+```dotenv
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=Devam@1234
+DB_NAME=movie_booking
+```
 
 # Getting Started with Create React App
 
